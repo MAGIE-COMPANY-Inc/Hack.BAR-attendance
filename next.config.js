@@ -1,4 +1,10 @@
-module.exports = {
+const withTM = require('next-transpile-modules')([
+  '@fullcalendar/common',
+  '@fullcalendar/daygrid',
+  '@fullcalendar/react',
+])
+
+module.exports = withTM({
   reactStrictMode: true,
   env: {
     FIREBASE_KEY: process.env.FIREBASE_KEY,
@@ -9,4 +15,4 @@ module.exports = {
     FIREBASE_SENDER_ID: process.env.FIREBASE_SENDER_ID,
     FIREBASE_APPID: process.env.FIREBASE_APPID,
   },
-};
+});

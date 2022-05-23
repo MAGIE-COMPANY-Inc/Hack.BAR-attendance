@@ -31,15 +31,6 @@ const AuthProvider: FC = ({ children }) => {
             profilePicture: user.photoURL,
             created_at: firebase.firestore.FieldValue.serverTimestamp(),
             uid: user.uid.substring(0,10),
-            university: "",
-            grade: "",
-            department: "",
-            role: "",
-            githubId: "",
-            twitterId: "",
-            instagramId: "",
-            bio: "",
-            knownAs: "",
           });
         }
       } else {

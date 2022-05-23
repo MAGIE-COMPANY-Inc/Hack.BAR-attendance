@@ -43,18 +43,6 @@ const Signin: NextPage = () => {
             <span>Sign in with Google</span>
           </div>
         </Button>
-        <Button
-          variant="solid-black"
-          className="py-4 w-72 sm:w-80 mt-7"
-          onClick={() => {
-            handleOnClick(githubProvider);
-          }}
-        >
-          <div className="flex">
-            <GithubIcon iconColor="white" className="mr-3" />
-            <span>Sign in with Github</span>
-          </div>
-        </Button>
         <div className=" pt-6 pb-12">
           <p className="text-sm">
             アカウントをお持ちでありませんか？{" "}

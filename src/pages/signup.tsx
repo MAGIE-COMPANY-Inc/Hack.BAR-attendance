@@ -43,7 +43,7 @@ const Signup: NextPage = () => {
               <div className="flex-col">
                 <p className="text-xl ml-6 mt-10">下記よりアカウント作成</p>
                 <p className="text-xs ml-6 mt-2">
-                  GitHubかGoogle連携が必要です
+                  Google連携が必要です
                 </p>
               </div>
             </div>
@@ -79,18 +79,6 @@ const Signup: NextPage = () => {
               <div className="flex">
                 <GoogleIcon className="mr-3" />
                 <span>Sign up with Google</span>
-              </div>
-            </Button>
-            <Button
-              variant="solid-black"
-              className="py-4 w-72 sm:w-80 mt-7"
-              onClick={() => {
-                handleOnClick(githubProvider);
-              }}
-            >
-              <div className="flex">
-                <GithubIcon iconColor="white" className="mr-3" />
-                <span>Sign up with Github</span>
               </div>
             </Button>
             <div className=" pt-6 pb-12">
