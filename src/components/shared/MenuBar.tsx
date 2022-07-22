@@ -14,7 +14,6 @@ export default function Menubar() {
               key={key}
               className=""
               onClick={() => {
-                console.log(val.link);
                 router.push(val.link);
                 router.pathname = val.link;
               }}
