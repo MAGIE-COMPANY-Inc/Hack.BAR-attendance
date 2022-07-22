@@ -14,6 +14,6 @@
     "isolatedModules": true,
     "jsx": "preserve"
   },
-  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx"],
+  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", "src/components/context/ContextWrapper.js", "src/components/calender/Labels.js", "src/components/calender/CreateEventButton.js", "src/components/calender/CreateEventButton.js"],
   "exclude": ["node_modules"]
 }
