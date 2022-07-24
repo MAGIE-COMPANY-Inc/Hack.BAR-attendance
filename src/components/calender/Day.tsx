@@ -1,23 +1,11 @@
 import dayjs from "dayjs";
-import React, { useContext, useState, useEffect } from "react";
-import GlobalContext from "../context/GlobalContext";
+import React, {useState, useEffect } from "react";
+import { useRecoilState } from "recoil";
+import { openState } from "../../atoms/modal";
 
 export default function Day({ day, rowIdx }) {
   const [dayEvents, setDayEvents] = useState([]);
-  const {
-    setDaySelected,
-    setShowEventModal,
-    filteredEvents,
-    setSelectedEvent,
-  } = useContext(GlobalContext);
-
-  useEffect(() => {
-    const events = filteredEvents.filter(
-      (evt) =>
-        dayjs(evt.day).format("DD-MM-YY") === day.format("DD-MM-YY")
-    );
-    setDayEvents(events);
-  }, [filteredEvents, day]);
+  let [isOpen, setIsOpen] = useRecoilState(openState);
 
   function getCurrentDayClass() {
     return day.format("DD-MM-YY") === dayjs().format("DD-MM-YY")
@@ -41,14 +29,13 @@ export default function Day({ day, rowIdx }) {
       <div
         className="flex-1 cursor-pointer"
         onClick={() => {
-          setDaySelected(day);
-          setShowEventModal();
+          setIsOpen(true)
         }}
       >
         {dayEvents.map((evt, idx) => (
           <div
             key={idx}
-            onClick={() => setSelectedEvent()}
+            // onClick={() => }
             className={`bg-${evt.label}-200 p-1 mr-3 text-gray-600 text-sm rounded mb-1 truncate`}
           >
             {evt.title}

@@ -12,6 +12,8 @@ import CalendarHeader from "../components/calender/CalendarHeader";
 import Sidebar from "../components/calender/Sidebar";
 import { useRecoilState, useRecoilValue } from "recoil";
 import { monthIdxState, monthState } from "../atoms/month";
+import EventModal from "../components/calender/EventModal";
+import { openState } from "../atoms/modal";
 
 const Home: NextPage = () => {
   const [authUser, authLoading, authError] = useAuthState(firebase.auth());
@@ -21,7 +23,9 @@ const Home: NextPage = () => {
   );
   const currentMonthIdx = useRecoilValue(monthIdxState);
   const [currenMonth, setCurrentMonth] = useRecoilState(monthState);
-  const { monthIndex, showEventModal } = useContext(GlobalContext);
+  // const { monthIndex, showEventModal } = useContext(GlobalContext);
+
+  const showEventModal = useRecoilValue(openState);
 
 
   useEffect(() => {
@@ -53,6 +57,7 @@ const Home: NextPage = () => {
           "profile",
         ]}
       >
+        {showEventModal && <EventModal />}
        <div className="h-screen flex flex-col">
         <CalendarHeader />
         <div className="flex flex-1">

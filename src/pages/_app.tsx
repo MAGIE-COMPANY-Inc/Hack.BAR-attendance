@@ -8,7 +8,7 @@ const MyApp = ({ Component, pageProps }: AppProps): JSX.Element => {
   return (
     <RecoilRoot>
       <AuthProvider>
-        <Component {...pageProps} />
+          <Component {...pageProps} />
       </AuthProvider>
     </RecoilRoot>
   );
